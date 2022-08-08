@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+    web:
+        build:
+            context: .
+        command: node server.js
+        volumes:
+            - .:/app/
+            - /app/node_modules
+            - ../configuration/:/configuration
+        ports:
+            - '3000:3000'
