@@ -1,1 +1,1 @@
-Time,Num,AvgCPU,AvgMEM,AvgNetI,AvgNetO,miner1-CPU,miner1-mem,miner1-netI,miner1-netO,miner2-CPU,miner2-mem,miner2-netI,miner2-netO,miner5-CPU,miner5-mem,miner5-netI,miner5-netO,miner4-CPU,miner4-mem,miner4-netI,miner4-netO,miner3-CPU,miner3-mem,miner3-netI,miner3-netO
+Time,Num,AvgCPU,AvgMEM,AvgNetI,AvgNetO,miner1-CPU,miner1-mem,miner1-netI,miner1-netO,miner5-CPU,miner5-mem,miner5-netI,miner5-netO,miner4-CPU,miner4-mem,miner4-netI,miner4-netO,miner3-CPU,miner3-mem,miner3-netI,miner3-netO,miner2-CPU,miner2-mem,miner2-netI,miner2-netO

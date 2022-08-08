@@ -1,8 +1,3 @@
-['192.168.0.19:27011', '192.168.0.19:27012', '192.168.0.19:27013']
-ethereum-clique
-INFO:	Start checking ...
-INFO: container miner1: cpu 1.89%, mem 3.75%, net_i 59700 B, net_o 46900 B
-INFO: container miner2: cpu 1.28%, mem 3.73%, net_i 51300 B, net_o 43100 B
-INFO: container miner5: cpu 1.57%, mem 3.69%, net_i 54600 B, net_o 43900 B
-INFO: container miner4: cpu 1.84%, mem 3.81%, net_i 61300 B, net_o 47700 B
-INFO: container miner3: cpu 1.75%, mem 3.76%, net_i 61100 B, net_o 51900 B
+['132.207.170.32:27011', '132.207.170.32:27012', '132.207.170.32:27013']
+polygon
+target must be sawtooth-pbft, sawtooth-raf ,sawtooth-poet, fabric or ethereum-clique or ethereum-pow

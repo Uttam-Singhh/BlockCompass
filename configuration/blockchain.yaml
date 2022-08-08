@@ -1,18 +1,31 @@
 blockchain:
-  type: ethereum-clique
+  type: polygon
 ethereum:
   receivers:
-    - url:  'http://172.31.16.56:8545'
+    - url:  'http://192.168.0.19:8545'
       account: '0xa7efd857de41dc223cfc8cf6fe052348492864c4'
       name: "miner 1"
-    - url:  'http://172.31.16.56:8546'
+    - url:  'http://192.168.0.19:8546'
       account: '0x116C95B6f0599b80EdaEF96dB4A0a03890bAf812'
       name: "miner 2"
-    - url:   'http://172.31.16.56:8547'
+    - url:   'http://192.168.0.19:8547'
       account : '0xe062C6acEF6e44a009dfF67bCBdDf2C780DdbC91'
       name: "miner 3"
   contract:
     address: '0x34afe602f642aedd6322bbd68a9300845b31c27b'
+    contractABI: '../configuration/contractABI.json'
+    gas: '0x100000'
+    gasPrice : '0x0'
+polygon:
+  receivers:
+    - url:  'http://132.207.170.32:8545'
+      account: '0xCd081054be46D50BC2292dF6CFDb6a76C9660222' 
+      name: "miner 1"
+    - url:  'http://132.207.170.32:8546'
+      account: '0xEfbD128f982Ac11AB8e637179eD60E467Aa5B4DC'
+      name: "miner 2"
+  contract:
+    address: '0xc2823daC310f62a8b40b4d1b8dC39CE6faEBF830'
     contractABI: '../configuration/contractABI.json'
     gas: '0x100000'
     gasPrice : '0x0'
@@ -36,9 +49,9 @@ sawtooth:
     - 'rest-api-2:8008'
     - 'rest-api-3:8008'
 replicaSet:
-  -  '172.31.16.56:27011'
-  -  '172.31.16.56:27012'
-  -  '172.31.16.56:27013'
+  -  '132.207.170.32:27011'
+  -  '132.207.170.32:27012'
+  -  '132.207.170.32:27013'
 nodeNumber:
   5
 dataSize:

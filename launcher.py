@@ -14,15 +14,15 @@ with open("./configuration/blockchain.yaml", 'r') as stream:
         print("[x] start backend client")
         subprocess.call(cmd.split(), cwd="backend")
 
-        # # 6. build frontend
-        # cmd = "docker-compose build --no-cache"
-        # print("[x] build frontend client")
-        # subprocess.call(cmd.split(), cwd="front")
+        # 6. build frontend
+        cmd = "docker-compose build --no-cache"
+        print("[x] build frontend client")
+        subprocess.call(cmd.split(), cwd="front")
 
-        # # 6. start frontend
-        # cmd = "docker-compose up -d"
-        # print("[x] start frontend client")
-        # subprocess.call(cmd.split(), cwd="front")
+        # 6. start frontend
+        cmd = "docker-compose up -d"
+        print("[x] start frontend client")
+        subprocess.call(cmd.split(), cwd="front")
 
         # 2. start network sample and adapter
         if loaded_config['blockchain']:
@@ -46,6 +46,27 @@ with open("./configuration/blockchain.yaml", 'r') as stream:
                 print("[x] Start ethereum pow adapter ")
                 cmd = "docker-compose -f ./eth-client-js/docker-compose.yml up -d"
                 subprocess.call(cmd.split())
+
+            if loaded_config['blockchain']['type'] == "polygon":
+                # 2.1.1 start polygon network
+                print("[x] Installing dependencies for Polygon network, ")
+                cmd = './networks/matic-cli/devnet'
+                subprocess.call(['sh', './networks/matic-cli/matic-run.sh'])
+
+
+                print("[x] Start polygon adapter ")                
+                cmd = "docker-compose -f ./polygon-client/docker-compose.yml up -d"                
+                subprocess.call(cmd.split())
+
+
+                print("[x] Starting the minting and deploying process, ")
+                cmd = './networks/matic-cli/ERC721'
+                subprocess.call(['sh', './networks/matic-cli/ERC721/nft-mint.sh'])
+                
+                # cmd = "docker-compose -f ./networks/ethereum-clique/docker-compose.yml up -d"
+                # subprocess.call(cmd.split())
+                # cmd = "docker-compose -f ./eth-client-js/docker-compose.yml up -d"
+                # subprocess.call(cmd.split())
 
             # 2.3 case hyperledger sawtooth PBFT
             elif loaded_config['blockchain']['type'] == "sawtooth-pbft":
